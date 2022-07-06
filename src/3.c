@@ -56,6 +56,8 @@ int maximo_elementos(int valor_ref, int* array, int tamanho_array)
 	int ret;
 
 	temp = malloc (sizeof (int) * tamanho_array);
+	if (!temp)
+		return (-1);
 	idx = 0;
 	ret = 0;
 	while (idx < tamanho_array) //copia o array para dentro de temp;
