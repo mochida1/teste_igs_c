@@ -28,12 +28,11 @@ void calc_fatorial(int *valor_ft, int valor_n)
 		*valor_ft *= valor_n;
 }
 int main() {
- int v = 0;
- int vf = 0;
+ int v, vf = 0;
  int *pv = &v;
  scanf("%d", &v);
  calc_fatorial(&vf, *pv);	//tive de arrumar a tipagem do orinal: calc_fatorial(vf, pv) manda tomava cast implicito e nos levava para o 0x0, resultando em segfault.
- 							//O contrário acontece com pv, que recebe um ponteiro como int.
+ 							//O contrário acontece com pv, que recebe um ponteiro como int. Resolvem-se também os warnings do compilador.
  printf("Valor fatorial de: [%d] é [%d]", v, vf);
  return 0;
 }
