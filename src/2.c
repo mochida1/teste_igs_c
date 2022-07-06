@@ -32,8 +32,8 @@ int main() {
  int v, vf = 0;
  int *pv = &v;
  scanf("%d", &v);
- calc_fatorial(&vf, *pv);	//tive de arrumar a tipagem do orinal: calc_fatorial(vf, pv) manda tomava cast implicito e nos levava para o 0x0, resultando em segfault.
- 							//O contrário acontece com pv, que recebe um ponteiro como int. Resolvem-se também os warnings do compilador.
+ calc_fatorial(&vf, *pv);	//tive de arrumar a tipagem do orinal: calc_fatorial(vf, pv) manda tomava cast implicito e nos levava para o 0x0, resultando em segfault, caso contrário precisaria de alocação na heap.
+ 							//O contrário acontece com pv, que recebe um ponteiro como int (o que sempre resultaria em overflows). Resolvem-se também os warnings do compilador.
  printf("Valor fatorial de: [%d] é [%d]", v, vf);
  return 0;
 }
