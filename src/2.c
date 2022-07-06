@@ -10,13 +10,14 @@
 /*
 ** como não existe fatorial de números negativos, lidamos com esse erro
 ** rapidinho e atualizamos valor_ft para -1;
+** se for dar overflow valor_n > 31, já setamos para -1 também.
 ** se for 0, seta para 1;
 ** depois é só faze um loop decrementando valor_n que roda enquanto valor_n for
 ** maior que 0 (não queremos zoar nossas multiplicaçoes) e atualizndo n.
 */
 void calc_fatorial(int *valor_ft, int valor_n)
 {
-	if (valor_n <= 0) //aninhando if só para economizar linha
+	if (valor_n <= 0 || valor_n > 31) //aninhando if só para economizar linha
 	{
 		*valor_ft = -1;
 		if (valor_n == 0)
