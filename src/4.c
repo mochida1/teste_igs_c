@@ -23,8 +23,6 @@ int calculate_the_maximum(int v1, int v2) //tive de mudar de calcular_maximum_bi
 		ret = v1 & v2;
 	if (ret < (v1 ^ v2))
 		ret = v1 ^ v2;
-	if (ret < (v1 & v2))
-		ret = v1 & v2;
 	if (ret < (~v1))	//TODAS operações bitwise na minha interepretação incluem os complementos de v1 e v2 e todas variações de bitshift entre v1 e v2 também;
 		ret = ~v1;
 	if (ret < (~v2))
